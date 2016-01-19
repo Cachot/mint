@@ -21,7 +21,6 @@ Ext.define('packt.Application',{  //1  means application has single page
 		var me = this; // 1 reference to Ext.appliccation itself
 		me.splashscreen = Ext.getBody().mask( // 2
 			'Loading application', 'splashscreen'
-			);
-		}
+		);
 	}
 });
