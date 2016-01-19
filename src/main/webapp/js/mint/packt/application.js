@@ -6,7 +6,7 @@ Ext.define('packt.Application',{  //1  means application has single page
 	],
 	
 	controllers: [  //4
-	    'Root'
+	    'Ext.app.Controller'
 	],
 	
 	stores: [  //5
