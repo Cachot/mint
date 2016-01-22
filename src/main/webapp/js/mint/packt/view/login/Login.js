@@ -1,6 +1,10 @@
 Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package name + name of the JS file
 	extend: 'Ext.window.Window',  
 	xtype: 'login-dialog', // can also use alias instead of xtype, like "alias: 'widget.login-dialog'"
+	requires: [  // Extjs doesn't know which ViewController or .. or .. class has needed alias
+	    'packt.view.login.LoginController'
+	],
+	controller: 'login',
 	
 	autoShow:true,  // auto display when instantiated
 	height: 170,
@@ -18,6 +22,7 @@ Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package n
 	items: [
 	{
 		xtype: 'form',
+		reference: 'form',  // ViewController has the method lookupReference(reference)
 		bodyPadding: 15,  // form body: add space between the form and window border
 		defaults: {
 			xtype: 'textfield',
@@ -50,12 +55,18 @@ Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package n
 			},{
 				xtype: 'button', 
 				iconCls: 'fa fa-times fa-lg',
-				text: 'Cancel'
+				text: 'Cancel',
+				listeners: {  // MVVC need to add listener
+					click: 'onButtonClickCancel'
+				}
 			},{
 				xtype: 'button',
 				formBind: true,  // the button only be enabled if the form has no error from the client validation
 				iconCls: 'fa fa-sign-in fa-lg',
-				text: 'Submit'
+				text: 'Submit',
+				listeners: {
+					click: 'onButtonClickSubmit'
+				}
 			}]
 		}]
 	}]
