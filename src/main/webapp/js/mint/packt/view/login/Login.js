@@ -7,6 +7,7 @@ Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package n
 	controller: 'login',
 	
 	autoShow:true,  // auto display when instantiated
+	
 	height: 170,
 	width: 360,
 	layout: {
@@ -31,7 +32,10 @@ Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package n
 			allowBlank: false,
 			vtype: 'alphanum',
 			minLength: 3,
-			msgTarget: 'under'  // title/ under/ side/ none can also use tooltip(qtip)
+			msgTarget: 'under',  // title/ under/ side/ none can also use tooltip(qtip)
+			listeners: {
+				specialKey: 'onTextFieldSpecialKey'  // form listeners
+			}
 		},
 		items: [
 		{
@@ -43,7 +47,13 @@ Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package n
 			name: 'password',
 			fieldLabel: 'Password',
 			vtype: 'customPass',
-			msgTarget: 'side'
+			msgTarget: 'side',
+			id: 'password',  // avoiding using id in the components
+			enableKeyEvents: true,
+			listeners: {
+				keypress: 'onTextFieldKeyPress',
+				specialKey:'onTextFieldSpecialKey'
+			}
 		}],
 		dockedItems: [  // of the form
 		{

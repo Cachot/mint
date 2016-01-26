@@ -14,7 +14,7 @@ Ext.define('packt.Application',{  // means application has single page
 	],
 	
 	launch: function(){  // this will be called after all the application's controllers are initialized
-		//TODO - Launch the application
+		Ext.tip.QuickTipManager.init(); // display the warning as a tooltip, An alternative: using the configuration enableQuickTips: true
 		var me = this;
 		var task = new Ext.util.DelayedTask(function(){
 			// destroy splashscreen
