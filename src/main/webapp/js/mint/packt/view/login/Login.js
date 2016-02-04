@@ -3,6 +3,7 @@ Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package n
 	xtype: 'login-dialog', // can also use alias instead of xtype, like "alias: 'widget.login-dialog'"
 	requires: [  // Extjs doesn't know which ViewController or .. or .. class has needed alias
 	    'packt.view.login.LoginController'
+	    //'packt.view.locale.Translation'
 	],
 	controller: 'login',
 	
@@ -14,6 +15,7 @@ Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package n
 		type: 'fit'  // is used when the parent container has only one child, and it will used all space of parent
 	},
 	iconCls: 'fa fa-key fa-lg',   
+	//title: translations['login'],
 	title: 'Login',
 	closeAction: 'hide',  // close: removed from DOM, and destroy the panel object hide: invisible destroy: cleans up the object and its resources
 	closable: false,  
@@ -41,11 +43,13 @@ Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package n
 		{
 			name: 'user',
 			fieldLabel: 'User',
+			//fieldLabel: translations['user'],
 			maxLength: 25
 		},{
 			inputType: 'password',  // bullet instead of character, other type: email, url, and tel
 			name: 'password',
 			fieldLabel: 'Password',
+			//fieldLabel: translations['password'],
 			vtype: 'customPass',
 			msgTarget: 'side',
 			id: 'password',  // avoiding using id in the components
@@ -60,12 +64,18 @@ Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package n
 			xtype: 'toolbar',
 			dock: 'bottom',  // top, right. left, bottom
 			items:[
+			/**
 			{
-			    xtype: 'tbfill' // let toolbar layout right-justified
+				xtype: 'translation'
+			},
+			*/
+			{
+			    xtype: 'tbfill' // fill reduce space, let toolbar layout right-justified
 			},{
 				xtype: 'button', 
 				iconCls: 'fa fa-times fa-lg',
 				text: 'Cancel',
+				//text: translations['cancel'],
 				listeners: {  // MVVC need to add listener
 					click: 'onButtonClickCancel'
 				}
@@ -74,6 +84,7 @@ Ext.define('packt.view.login.Login',{  // name formate:App Namespace + package n
 				formBind: true,  // the button only be enabled if the form has no error from the client validation
 				iconCls: 'fa fa-sign-in fa-lg',
 				text: 'Submit',
+				//text: translations['submit'],
 				listeners: {
 					click: 'onButtonClickSubmit'
 				}

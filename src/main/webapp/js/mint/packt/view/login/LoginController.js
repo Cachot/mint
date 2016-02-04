@@ -4,7 +4,8 @@ Ext.define('packt.view.login.LoginController',{
 	
 	requires: [
 	    'packt.util.Util',
-	    'packt.view.login.CapsLockTooltip'
+	    'packt.view.login.CapsLockTooltip',
+	    'packt.util.SessionMonitor'
 	],
 
 	onTextFieldSpecialKey: function(field, e, options){  //  user can hit Enter to login
@@ -109,5 +110,6 @@ Ext.define('packt.view.login.LoginController',{
 		this.getView().unmask();
 		this.getView().close();  // get the reference of the login window class
 		Ext.create('packt.view.main.Main');
+		packt.util.SessionMonitor.start();
 	} 
 })

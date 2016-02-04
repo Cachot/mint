@@ -10,7 +10,8 @@ Ext.define('packt.view.main.Main',{
         'packt.view.main.Footer',
         'packt.view.main.Panel',
         'packt.view.main.MainController',
-        'packt.view.main.MainModel'
+        'packt.view.main.MainModel',
+        'packt.view.menu.Accordion'
     ],
     controller: 'main',
     viewModel: {
@@ -34,8 +35,8 @@ Ext.define('packt.view.main.Main',{
     },{
     
     	region: 'west',
-    	xtype: 'container',
-    	width: 200,
-    	split: true
+    	xtype: 'mainmenu'
+    	//width: 200,
+    	//split: true
     }]
 });
