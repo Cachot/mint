@@ -1,16 +1,13 @@
 Ext.define('packt.view.main.Footer',{
 	extend: 'Ext.container.Container',  // It's the lightest component, use it whenever possible
-	xtype: 'appfooter',
-	cls: 'app-footer',  // add a style
-	height: 30,
-	layout: 'center',  // inherits from the fit layout, only support a single child
+	xtype: 'pwfooter',
+	cls: 'pw-footer',  // add a style
 	items:[
 	{
 		xtype: 'component',
-		width: 350,
-		componentCls: 'app-footer-title',  
+		componentCls: 'pw-footer-title',  
 		bind:{
-			html: '{footer}'
+			html: '{footer}'  // reference in main.js and the footer text in main model
 		}
 	}]
 });

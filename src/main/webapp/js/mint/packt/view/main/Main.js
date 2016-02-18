@@ -4,39 +4,65 @@ Ext.define('packt.view.main.Main',{
     extend: 'Ext.container.Container',
     plugins: 'viewport',  // advantage: we can still reuse this class in other contexts
     //ptype
-    xtype: 'app-main',
-    requires: [
-        'packt.view.main.Header',
-        'packt.view.main.Footer',
-        'packt.view.main.Panel',
-        'packt.view.main.MainController',
-        'packt.view.main.MainModel',
-        'packt.view.menu.Accordion'
+    require:[
+        'Ext.button.segmented',
+        'Ext.list.Tree',
+        'Ext.layout.container.VBox',
+        'packt.view.main.MainMenu'
     ],
     controller: 'main',
-    viewModel: {
-    	type: 'main'
+    viewModel: 'main',
+    
+    layout: 'fit',
+    scrollable: 'y',
+    
+    listeners:{
+    	render: 'onMainViewRender'
     },
-    layout: {
-    	type: 'border'
-    },
     
-    items: [{
-    	region: 'center',
-    	xtype: 'mainpanel'
-    },{
+    initComponent:function() {
+    	
+    	this.banner = Ext.create('Ext.Component',{
+    		cls: 'pw-banner',
+    		region: 'north',
+    		html: '<div class = "pw-logo"></div>'
+    	})
     
-    	region: 'north',
-    	xtype: 'appheader'
-    },{
+        this.items = [this.banner,{
+        	xtype: 'container',
+        	name: 'mainContainer',
+        	region: 'center',
+        	layout: 'border',
+        	items:[{
+        	    region: 'center',
+    	        xtype: 'container',
+    	        name: 'mainCardCt',
+    	        reference: 'mainCardPanel',
+    	        flex: 1,
+    	        itemId: 'contentPanel',
+    	        layout: {
+    		        type: 'card',
+    		        anchor: '100%'
+    	        }
+            },{
+    	        region: 'north',
+    	        xtype: 'pwheader'
+            },{
+    	        region: 'south',
+    	        xtype: 'pwfooter'
+            },{
     
-    	region: 'south',
-    	xtype: 'appfooter'
-    },{
-    
-    	region: 'west',
-    	xtype: 'mainmenu'
-    	//width: 200,
-    	//split: true
-    }]
+    	        region: 'west',
+    	        xtype: 'mainmenu',
+    	        bind: {
+    	        	data: '{navigateNodes}'
+    	        },
+    	        listeners: {
+    		        'navigating': 'onNavigating'
+    	        }
+            }]
+        }];
+        
+        this.callParent();
+    }
 });

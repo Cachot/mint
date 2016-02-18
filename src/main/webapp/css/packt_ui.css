@@ -1,0 +1,75 @@
+@CHARSET "UTF-8";
+/* Navigation */
+.pw-navi-list {
+	background: #555555;
+	border-right: 2px solid #2e2e2e;
+	width: 200px;
+	min-height: 800px;
+}
+
+.pw-navi-list .pw-navi-item{
+	height: 80px;
+	line-height: 80px;
+	cursor: pointer;
+	color: #FAFAD2;
+	font-size: 20px;
+	padding-left: 80px;
+}
+
+.pw-navi-list .pw-navi-item:hover{
+	background-color: #DCDCDC;
+	padding-left: 90px;
+	color: #0b0b1a;
+}
+
+.pw-navi-list .pw-navi-item-selected .qz-navi-item{
+	background-color: #DCDCDC !important;
+	padding-left: 85px !important;
+}
+
+.pw-navi-sep {
+	
+}
+
+.pw-navi-group {
+	
+}
+
+/* Footer */
+.pw-footer {
+	height: 70px;
+	background: #121212;
+	border-top: 5px solid white;
+}
+
+.pw-footer-title{
+	line-height: 60px;
+	text-align: right;
+	font-size: 14px;
+	color: #FAFAD2;
+	padding-right: 40px;
+}
+
+/* Banner */
+.pw-banner{
+	height: 120px !important;
+	background: url('../resources/images/app/banner.jpg') repeat-x;
+}
+
+.pw-banner .pw-logo{
+	
+}
+
+/* Header */
+.pw-header{
+	border-color: #2e2e2e;
+}
+
+.pw-header .pw-header-logoutbutton{
+	padding-right: 10px;
+}
+
+/* About Me */
+.pw-aboutme{
+	background-color: black;
+}

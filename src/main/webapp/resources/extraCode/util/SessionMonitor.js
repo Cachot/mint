@@ -7,7 +7,8 @@ Ext.define('packt.util.SessionMonitor',{
 	remaining: 0,
 	//ui: Ext.getBody(),
 	
-	window: Ext.create('Ext.window.Window',{	
+	window: Ext.create('Ext.window.Window',{
+	
 		bodyPadding: 5,
 		closable: false,
 		closeAction: 'hide',
@@ -37,7 +38,7 @@ Ext.define('packt.util.SessionMonitor',{
 					
 					Ext.Ajax.request({
 					
-						url: 'php/sessionAlive.php'
+						url: 'user/poke.action'
 					});
 				}
 			},{
@@ -48,9 +49,7 @@ Ext.define('packt.util.SessionMonitor',{
 					Ext.TaskManager.stop(packt.util.SessionMonitor.countDownTask);
 					packt.util.SessionMonitor.window.hide();
 					
-					// find and invoke Logout button
-					var btn = Ext.ComponentQuery.query('button#logout')[0];
-					btn.fireEvent('click', btn);
+					Ext.ComponentQuery.query('button#logout')[0].fireEvent('click',Ext.ComponentQuery.query('button#logout')[0]);
 				}
 			}]
 		}),
@@ -104,8 +103,7 @@ Ext.define('packt.util.SessionMonitor',{
 			this.window.down('label').update('Your session will expire in' + this.remaining + 'second' + ((this.remaining == 1)?'.':'s.'));
 			--this.remaining;
 			if(this.remaining<0){
-				var btn = Ext.ComponentQuery.query('button#logout')[0];
-				btn.fireEvent('click',btn);
+				this.window.down('button[action = "logout"').handler();
 			}
 		}
 });

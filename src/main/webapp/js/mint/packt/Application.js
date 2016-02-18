@@ -23,7 +23,7 @@ Ext.define('packt.Application',{  // means application has single page
 	],
 	
 	stores: [  // need to declar the stores we are using in this case
-	
+
 	],
 	
 	launch: function(){  // this will be called after all the application's controllers are initialized

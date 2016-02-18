@@ -34,4 +34,4 @@ Ext.define('packt.model.security.Base',{
 			}
 		}
 	}
-})
+});

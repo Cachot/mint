@@ -1,11 +1,13 @@
 Ext.define('packt.view.main.Header',{
 
 	extend: 'Ext.toolbar.Toolbar',
-	xtype: 'appheader',
+	xtype: 'pwheader',
 	requires: [  
 	    //'packt.view.locale.Translation'  // mutil-language
 	],
-	ui: 'footer',  // allow to use a specific theme for a component
+	//ui: 'footer',  // allow to use a specific theme for a component
+	cls: 'pw-header',
+
 	items: [{
 	
 		xtype: 'component',
@@ -40,6 +42,7 @@ Ext.define('packt.view.main.Header',{
 		//text: translations['logout'],
 		reference: 'logout',  // make it easier to retrieve by ViewController
 		iconCls: 'fa fa-sign-out fa-lg buttonIcon', // add a custom style (buttonIcon)
+		cls: 'pw-header-logoutbutton',
 		listeners: {
 			click: 'onLogout'
 		}

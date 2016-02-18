@@ -112,4 +112,4 @@ Ext.define('packt.view.login.LoginController',{
 		Ext.create('packt.view.main.Main');
 		packt.util.SessionMonitor.start();
 	} 
-})
+});
