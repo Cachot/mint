@@ -1,6 +1,6 @@
-Ext.define('packt.view.content.aboutme.AboutMe',{
+Ext.define('packt.view.content.contact.Contact',{
 	extend: 'Ext.panel.Panel',
-	xtype: 'aboutme',
+	xtype: 'contact',
 	layout:{
 		type: 'vbox'
 	},
@@ -8,9 +8,9 @@ Ext.define('packt.view.content.aboutme.AboutMe',{
 	defaults:{
 		width: "95%"  // width of main card panel
 	},
-	//controller: 'aboutme',
+	//controller: 'contact',
 	bodyPadding: '0 30 0 20',
-	cls: 'pw-aboutme',
+	cls: 'pw-contact',
 	
 	initComponent: function(){
 		
@@ -73,7 +73,7 @@ Ext.define('packt.view.content.aboutme.AboutMe',{
 		
 		this.readingPanel = Ext.create("Ext.panel.Panel",{
 			width: 200,
-			height: 350,  // fix bug
+			height: 350,
 			data:{},
 			tpl: new Ext.XTemplate(
 			    '<div class="pw-readingpanel">',
@@ -97,65 +97,7 @@ Ext.define('packt.view.content.aboutme.AboutMe',{
 				type: "vbox"
 			},
 			items: [this.imgContainer, this.readingPanel]
-		});
-		
-		this.titlePanel = Ext.create("Ext.panel.Panel",{
-			html: '<h1 class="title">Keep hungry, Keep foolish</h1>'
-		});
-// Doing		
-		this.myblogPanel = Ext.create("Ext.panel.Panel",{
-			width: 300,
-			cls: 'pw-myblogpanel',
-			data:{},
-			tpl: new Ext.XTemplate(
-			    '<div class="pw-myblogpanel">',
-			      '<h2>My blog</h2>',
-			      '<div class="blog-info">',
-			        '<time datetime="2016-02-25">',
-			        '<span>25</span>',
-			        '02.2016',
-			        '</time>',
-			        '<h3>',
-			          '<a href="#">How to put all component at one page by using Extjs</a>',
-			        '</h3>',
-			      '</div>',
-			      
-			      '<div class="blog-info">',
-			        '<time datetime="2016-02-25">',
-			        '<span>25</span>',
-			        '02.2016',
-			        '</time>',
-			        '<h3>',
-			          '<a href="#">Marketing plan for Love Snaker V</a>',
-			        '</h3>',
-			      '</div>',
-			          
-			      '<div class="blog-info">',
-			        '<time datetime="2016-02-25">',
-			        '<span>25</span>',
-			        '02.2016',
-			        '</time>',
-			        '<h3>',
-			          '<a href="#">Data mining - improved k-means algrithm</a>',
-			        '</h3>',
-			      '</div>'
-			)
 		})
-		
-		this.subThirdPanel = Ext.create("Ext.panel.Panel",{
-			layout:{
-				type: "hbox"
-			},
-			items: [this.eventsPanel, this.blogsPanel]
-		});
-		
-		this.thirdPanel = Ext.create("Ext.panel.Panel",{
-			height: 1150,
-			layout:{
-				type: "vbox"
-			},
-			items: [this.titlePanel, this.subThirdPanel]
-		});
 		
 		this.introPanel = Ext.create("Ext.panel.Panel",{
 			layout:{

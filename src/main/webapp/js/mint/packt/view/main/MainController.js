@@ -93,7 +93,7 @@ Ext.define('packt.view.main.MainController',{
 		me.lastView = newView;
 		
 		for(var i=0,len=menuItems.length;i<len;i++){
-			if(menuItem[i]["children"]){
+			if(menuItems[i]["children"]){
 				for(var j=0, length = menuItems[i].children.length;j<length;j++){
 					menuItems[i].children[j].actived=false;
 						if(menuItems[i].children[j].viewType == hashTag){

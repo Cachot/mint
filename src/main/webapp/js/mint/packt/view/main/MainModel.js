@@ -22,8 +22,8 @@ Ext.define('packt.view.main.MainModel',{
 		
 		config.data = {
 			name: 'packt',
-			appName: 'Personal Website',
-			appHeaderIcon: '<span class="fa fa-users">',
+			userName: 'Zhang Cheng',
+			appHeaderIcon: '<span class="fa fa-user">',
 			footer: 'Extjs Practice - Cachot - http: //www.mintelcn.com',
 			currentView: null,
 			navigateNodes: [{

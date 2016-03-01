@@ -18,7 +18,7 @@ Ext.define('packt.view.main.Header',{
 	
 		xtype: 'component',
 		bind: {
-			html: '{appName}'
+			html: 'Welcome to {userName}\'s page'
 		}
 	},{
 	

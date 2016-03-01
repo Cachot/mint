@@ -15,7 +15,8 @@ Ext.define('packt.Application',{  // means application has single page
 	name: 'packt',  
 	glyphFontFamily: 'FontAwesome',
 	views: [  // need to declare the views we are using in this case
-	    'login.Login'   
+	    //'login.Login' '
+	    'main.Main'
 	],
 	
 	controllers: [  // need to declare the controllers we are using in this case
@@ -25,7 +26,7 @@ Ext.define('packt.Application',{  // means application has single page
 	stores: [  // need to declar the stores we are using in this case
 
 	],
-	
+/*	
 	launch: function(){  // this will be called after all the application's controllers are initialized
 		Ext.tip.QuickTipManager.init(); // display the warning as a tooltip, An alternative: using the configuration enableQuickTips: true
 		var me = this;
@@ -65,4 +66,9 @@ Ext.define('packt.Application',{  // means application has single page
 		    cls:'x-splash-icon'
 		});
 	}
+*/
+	init: function(){
+		Ext.create('packt.view.main.Main');
+	}
+	
 });

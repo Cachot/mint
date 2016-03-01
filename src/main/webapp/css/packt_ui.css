@@ -1,4 +1,12 @@
 @CHARSET "UTF-8";
+/* For clear default style*/
+.x-panel-body-default{
+	border: none;
+	/*border-width: 1px;   Use for test */
+	/* 'border: none;' Don't support IE 6,7, which can use 'border:0;', but the performance is bad  */
+}
+
+
 /* Navigation */
 .pw-navi-list {
 	background: #555555;
@@ -20,11 +28,14 @@
 	background-color: #DCDCDC;
 	padding-left: 90px;
 	color: #0b0b1a;
+	font-weight:bold;
 }
 
-.pw-navi-list .pw-navi-item-selected .qz-navi-item{
+.pw-navi-list .pw-navi-item-selected .pw-navi-item{
 	background-color: #DCDCDC !important;
-	padding-left: 85px !important;
+	padding-left: 90px !important;
+	color: #0b0b1a;
+	font-weight: bold;
 }
 
 .pw-navi-sep {
@@ -56,20 +67,150 @@
 	background: url('../resources/images/app/banner.jpg') repeat-x;
 }
 
-.pw-banner .pw-logo{
-	
+.pw-banner .pw-title{
+	padding: 10px;
+	font-size: 50px;
+	font-weight: bold;
+	color: red;
 }
 
-/* Header */
+.pw-banner .pw-title span{
+	color: #FAFAD2;
+}
+
+/* Header(tool bar) */
 .pw-header{
 	border-color: #2e2e2e;
+	background: url('../resources/images/app/toolbarbg.jpg') repeat-x;
+	color: #FAFAD2;
+	font-weight: bold;
 }
 
-.pw-header .pw-header-logoutbutton{
+.pw-header .fa-user{
+	padding:0 8px;
+}
+
+.pw-header-logoutbutton{
+	width:100px;
 	padding-right: 10px;
+	background: #808080;
+	border-radius: 10px;
+}
+
+.pw-header-logoutbutton .x-btn-inner-default-toolbar-small{
+	color: #FAFAD2;
+}
+
+.pw-header-logoutbutton .buttonIcon{
+	padding-top: 4px;
 }
 
 /* About Me */
-.pw-aboutme{
-	background-color: black;
+
+/* About Me left panel */
+.pw-aboutme-info{
+	vertical-align: top;
+	margin-right: 14px;
+	border-bottom: 0;
+}
+
+.pw-aboutme-weibo{
+	vertical-align:top;
+	margin-bottom: 50px;
+	border-bottom: 0;
+}
+
+.pw-aboutme-info .firstname{
+	font-size: 30px;
+	padding-top: 50px; /* need to change in the future(if has some useful buttons) */
+	margin: 0;
+}
+
+.pw-aboutme-info .lastname{
+	font-size: 46px;
+	font-weight: bold;
+	margin: -8px 0 0;
+}
+
+.pw-aboutme-info .position{
+	color: #ff732f;
+	font-size: 10px;
+	font-weight: bold;
+	padding-bottom: 40px;
+	margin-top: 4px;
+	border-bottom-style: double;
+	border-color:#7b9bfb;
+}
+
+.pw-aboutme-info h2{
+	padding: 20px 0 10px;
+}
+
+.pw-aboutme-info .myintro{
+	line-height: 22px;
+}
+
+.pw-aboutme-info .myintro a{
+	color: #7db8f9;
+}
+
+.pw-bowen {
+	width: 184px;
+	font-style: italic;
+	color: white;
+}
+
+.pw-bowen .top{
+	height: 16px;
+	margin:0;
+	background: url('../resources/images/app/bowenbg.gif') no-repeat;
+}
+.pw-bowen .content{
+	background: url('../resources/images/app/bowenbg.gif') repeat-y -184px 0;
+	margin:0;
+	padding:0 4px;
+}
+
+.pw-bowen .content a{
+	text-decoration: none;
+	color: #a0d2f8;
+}
+
+.pw-bowen .time{
+	background: url('../resources/images/app/bowenbg.gif') repeat-y -184px 0;
+	padding: 8px 4px;
+	margin:0;
+}
+.pw-bowen .bottom{
+	height: 16px;
+	margin:0;
+	padding-bottom: 30px;
+	background: url('../resources/images/app/bowenbg.gif') no-repeat -368px 0;
+}
+
+/* About Me second panel */
+
+.pw-aboutme .pw-idphoto{
+	margin: 50px 0;
+	border-radius: 40px;
+	border: 1px solid #6eb9cf;
+
+}
+
+.pw-aboutme .pw-readingpanel{
+	padding-top: 20px;
+}
+
+/* About Me third panel */
+/* Doing */
+.pw-aboutme .pw-myblogpanel time{
+	display: block;
+	float: left;
+	width: 52px;
+	
+	padding-top: 10px;
+	text-align: center;
+	font-size: 10px;
+	font-weight: bold;
+	margin-bottom: 20px;
 }

@@ -25,7 +25,8 @@ Ext.define('packt.view.main.Main',{
     	this.banner = Ext.create('Ext.Component',{
     		cls: 'pw-banner',
     		region: 'north',
-    		html: '<div class = "pw-logo"></div>'
+    		//html: '<div class = "pw-logo">JUST <span>ME</span></div>'
+    		html: '<div class = "pw-title">JUST <span>ME</span></div>'
     	})
     
         this.items = [this.banner,{
@@ -38,7 +39,7 @@ Ext.define('packt.view.main.Main',{
     	        xtype: 'container',
     	        name: 'mainCardCt',
     	        reference: 'mainCardPanel',
-    	        flex: 1,
+    	        flex: 100,
     	        itemId: 'contentPanel',
     	        layout: {
     		        type: 'card',
