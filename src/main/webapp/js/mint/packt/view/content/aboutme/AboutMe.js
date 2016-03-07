@@ -24,8 +24,8 @@ Ext.define('packt.view.content.aboutme.AboutMe',{
 			        '<p class="lastname">Zhang</p>',
 			        '<p class="position">Front-end Developer</p>',
 			      '<h2>About Me</h2>',
-			        '<p class="myintro">asdf asfd ss sdf dsf wer sdf df d dfwer sd xxd we ewr asdf asdf wer wer ae asdf zxcv asdf adsad dfsa awe werzsd zxcv sdfas werds wqef sadf</p>',
-			        '<p class="myintro">asd afsd sdf sdf sd sdf asdfwe werzsd zxcv sdfas werds wqef sadf <a href="#history">see more</a></p>',
+			        '<p class="content">asdf asfd ss sdf dsf wer sdf df d dfwer sd xxd we ewr asdf asdf wer wer ae asdf zxcv asdf adsad dfsa awe werzsd zxcv sdfas werds wqef sadf</p>',
+			        '<p class="content">asd afsd sdf sdf sd sdf asdfwe werzsd zxcv sdfas werds wqef sadf <a href="#history">see more</a></p>',
 			    '</div>'
 			)
 		});
@@ -34,19 +34,19 @@ Ext.define('packt.view.content.aboutme.AboutMe',{
 			width: 200,
 			data:{},
 			tpl: new Ext.XTemplate(
-			    '<div class="pw-aboutme-weibo">',
+			    '<div class="pw-weibo">',
 			    '<h2>Weibo</h2>',
 			      '<p>Need extra Js</p>',
 			      //TODO
 			      '<div class="pw-bowen">',
 			        '<div class="top"></div>',
-			        '<p class="content">@<a href="#">ZhangCheng</a>You are just 25, you can be anyone you want to.</p>',
+			        '<p class="bowen-content">@<a href="#">ZhangCheng</a>You are just 25, you can be anyone you want to.</p>',
 			        '<p class="time">3 days ago</p>',
 			        '<div class="bottom"></div>',
 			      '</div>',
 			      '<div class="pw-bowen">',
 			        '<div class="top"></div>',
-			        '<p class="content">@<a href="#">ZhangCheng</a>Remember your dream all the time.</p>',
+			        '<p class="bowen-content">@<a href="#">ZhangCheng</a>Remember your dream all the time.</p>',
 			        '<p class="time">4 days ago</p>',
 			        '<div class="bottom"></div>',
 			      '</div>',
@@ -100,23 +100,40 @@ Ext.define('packt.view.content.aboutme.AboutMe',{
 		});
 		
 		this.titlePanel = Ext.create("Ext.panel.Panel",{
-			html: '<h1 class="title">Keep hungry, Keep foolish</h1>'
+			html: '<h1 class="pw-title">Keep hungry, Keep foolish</h1>'
 		});
-// Doing		
-		this.myblogPanel = Ext.create("Ext.panel.Panel",{
+		
+		this.eventsPanel = Ext.create("Ext.panel.Panel",{
 			width: 300,
-			cls: 'pw-myblogpanel',
 			data:{},
 			tpl: new Ext.XTemplate(
-			    '<div class="pw-myblogpanel">',
+			    '<div class = "pw-eventspanel">',
+			      '<h2>Events</h2>',
+			      '<div class="event-info">',
+			        '<h3>HoloLens Released!!!</h3>',
+			        '<p class="content">dsa fasdf asdfs adfsa dfa sdf dfa sfs af asfa sdf ewa rfd wea4r' +
+			          'asd fff qqqq qqq qqqq qqaa aa aaaa ags dgvse rder' +
+			          'asdfweqarwweqr' +
+			        '</p>',
+			      '</div>',
+			    '</div>'
+			)
+			
+		})
+		
+		this.myblogsPanel = Ext.create("Ext.panel.Panel",{
+			width: 300,
+			data:{},
+			tpl: new Ext.XTemplate(
+			    '<div class="pw-myblogspanel">',
 			      '<h2>My blog</h2>',
-			      '<div class="blog-info">',
+			      '<div class="blog-info">', //extjs 不支持同时定义两个class，所以不能使用创建after伪类，清浮动
 			        '<time datetime="2016-02-25">',
 			        '<span>25</span>',
 			        '02.2016',
 			        '</time>',
 			        '<h3>',
-			          '<a href="#">How to put all component at one page by using Extjs</a>',
+			          '<a href="#">How to create the view of Extjs App</a>',
 			        '</h3>',
 			      '</div>',
 			      
@@ -138,7 +155,8 @@ Ext.define('packt.view.content.aboutme.AboutMe',{
 			        '<h3>',
 			          '<a href="#">Data mining - improved k-means algrithm</a>',
 			        '</h3>',
-			      '</div>'
+			      '</div>',
+			    '</div>'
 			)
 		})
 		
@@ -146,11 +164,12 @@ Ext.define('packt.view.content.aboutme.AboutMe',{
 			layout:{
 				type: "hbox"
 			},
-			items: [this.eventsPanel, this.blogsPanel]
+			items: [this.eventsPanel, this.myblogsPanel]
 		});
 		
 		this.thirdPanel = Ext.create("Ext.panel.Panel",{
-			height: 1150,
+			height: 1200,
+			cls: 'pw-thirdpanel',
 			layout:{
 				type: "vbox"
 			},
@@ -161,7 +180,7 @@ Ext.define('packt.view.content.aboutme.AboutMe',{
 			layout:{
 				type: "hbox"
 			},
-			items:[this.firstPanel, this.secondPanel]
+			items:[this.firstPanel, this.secondPanel,this.thirdPanel]
 		});
 
 		this.items = [this.introPanel];

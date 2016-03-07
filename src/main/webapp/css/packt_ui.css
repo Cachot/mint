@@ -106,15 +106,17 @@
 }
 
 /* About Me */
-
+.pw-aboutme{
+	min-width: 1100px;
+}
 /* About Me left panel */
 .pw-aboutme-info{
 	vertical-align: top;
-	margin-right: 14px;
+	padding-right: 14px;
 	border-bottom: 0;
 }
 
-.pw-aboutme-weibo{
+.pw-weibo{
 	vertical-align:top;
 	margin-bottom: 50px;
 	border-bottom: 0;
@@ -137,7 +139,6 @@
 	font-size: 10px;
 	font-weight: bold;
 	padding-bottom: 40px;
-	margin-top: 4px;
 	border-bottom-style: double;
 	border-color:#7b9bfb;
 }
@@ -146,11 +147,11 @@
 	padding: 20px 0 10px;
 }
 
-.pw-aboutme-info .myintro{
+.pw-aboutme .content{
 	line-height: 22px;
 }
 
-.pw-aboutme-info .myintro a{
+.pw-aboutme-info .content a, .bowen-content a{
 	color: #7db8f9;
 }
 
@@ -165,7 +166,7 @@
 	margin:0;
 	background: url('../resources/images/app/bowenbg.gif') no-repeat;
 }
-.pw-bowen .content{
+.pw-bowen .bowen-content{
 	background: url('../resources/images/app/bowenbg.gif') repeat-y -184px 0;
 	margin:0;
 	padding:0 4px;
@@ -202,15 +203,61 @@
 }
 
 /* About Me third panel */
+.pw-aboutme .pw-title{
+	width: 600px;
+	text-align:center;
+	font-style: italic;
+	padding-top: 50px;
+}
 /* Doing */
-.pw-aboutme .pw-myblogpanel time{
+.pw-aboutme .pw-thirdpanel{
+	min-width: 650px;
+	padding-left:50px;
+	text-align: center;
+	clear: both;
+}
+.pw-aboutme .pw-eventspanel{
+	float: left;
+}
+.pw-aboutme .pw-myblogspanel{
+	float: right;
+}
+.pw-aboutme .pw-myblogspanel time{
 	display: block;
 	float: left;
-	width: 52px;
-	
+	height:66px; /* float,高度由内容撑开，设置高度解决bug*/
+	width: 52px;	
 	padding-top: 10px;
-	text-align: center;
+	color: #b4dbe7;
 	font-size: 10px;
-	font-weight: bold;
 	margin-bottom: 20px;
+	background: url('../resources/images/app/timebg.png') no-repeat left top;
+}
+
+.pw-myblogspanel .blog-info{
+	clear: both; /* clear float of time and content */
+	display: block;
+	height: 76px; /* 通过给高度清浮动 */
+	padding-bottom: 14px;
+	border-bottom: 1px solid #7b9bfb;
+}
+
+.pw-aboutme .pw-myblogspanel span{
+	color: white;
+	font-size: 26px;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+}
+
+.pw-aboutme .pw-myblogspanel h3{
+	float: right;
+	width: 200px;
+	color: white;
+}
+
+.pw-aboutme .pw-myblogspanel a{
+	padding-left: 20px;
+	text-decoration: none;
+	color: #b4dbe7;
 }
